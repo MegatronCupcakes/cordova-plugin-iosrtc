@@ -3,7 +3,7 @@ import AVFoundation
 
 
 @objc(iosrtcPlugin) // This class must be accesible from Objective-C.
-class iosrtcPlugin : CDVPlugin {
+class iosrtcPlugin : SWIFTCDVPlugin {
 	// RTCPeerConnectionFactory single instance.
 	var rtcPeerConnectionFactory: RTCPeerConnectionFactory!
 	// Single PluginGetUserMedia instance.

@@ -5,6 +5,9 @@
 
 #import <Cordova/CDVPlugin.h>
 
+// swift initialization workaround header
+#import "SWIFTCDVPlugin.h"
+
 // #import "RTCAudioSource.h"
 #import "RTCAudioTrack.h"
 #import "RTCDataChannel.h"

@@ -19,6 +19,13 @@
 	</engines>
 
 	<platform name="ios">
+
+		<!-- Swift Support Hook -->
+		<hook type="after_platform_add" src="extra/hooks/iosrtc-swift-support.js" />
+
+		<!-- add Bridging Header -->
+		<hook type="after_plugin_install" src="extra/iosAddBridgingHeader.js" />
+
 		<config-file target="config.xml" parent="/*">
 			<feature name="iosrtcPlugin">
 				<param name="ios-package" value="iosrtcPlugin" />
@@ -99,6 +106,11 @@
 
 		<!-- WebRTC static library -->
 		<source-file src="lib/libWebRTC-LATEST-Universal-Release.a" framework="true" />
+
+		<!-- Add workaround for Swift designated initializer issue with CDVPlugin -->
+		<header-file src="src/SWIFTCDVPlugin/SWIFTCDVPlugin.h" />
+		<source-file src="src/SWIFTCDVPlugin/SWIFTCDVPlugin.m" />
+
 	</platform>
 
 </plugin>
